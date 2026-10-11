@@ -35,11 +35,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 TERMS = {
-    "success": "the cube ends in the bowl",
+    "success": "the cube ends in the bowl (bowl inner radius 5 cm: resting under 5 cm from its centre is in)",
     "duplicated_object": "the video adds or splits a red block",
     "tracking_drift": "the block moves without the hand",
     "grasp_miss": "the cube never leaves the table",
-    "missed_bowl": "lifted, but released outside the bowl",
+    "missed_bowl": "lifted, but it rests outside the bowl (5 cm or more from its centre)",
     "reach_limit": "the SO-101 cannot reach the pose",
     "motion_too_fast": "joint speed, acceleration or jerk over the limit",
 }
