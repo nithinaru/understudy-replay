@@ -15,6 +15,7 @@
   <script src="route.js?v=11" defer></script>
   <script src="preview.js?v=15" defer></script>
   <script src="site.js?v=15" defer></script>
+  <script src="rsi.js?v=1" defer></script>
 </head>
 <body>
   <main class="page">
@@ -75,6 +76,38 @@
       <div class="grid" id="grid"></div>
       <div id="prompts"></div>
     </section>
+    <section class="rsi" id="rsi" hidden aria-label="Self-improving failure labeler">
+      <header class="rsi-head">
+        <div>
+          <p class="rsi-kicker">RSI · last stage</p>
+          <h2>MuJoCo writes what happened. <em>An agent learns to name it.</em></h2>
+          <p class="rsi-sub" id="rsi-sub"></p>
+        </div>
+        <p class="rsi-score" id="rsi-score"></p>
+      </header>
+      <div class="rsi-target">
+        <span class="gpu-label" id="rsi-target-label">Tuning</span>
+        <div class="gpu-seg" id="rsi-target" role="radiogroup" aria-labelledby="rsi-target-label">
+          <button type="button" role="radio" data-k="vla">VLA</button><button type="button" role="radio" data-k="llm">LLM</button>
+        </div>
+        <span class="gpu-hint" id="rsi-target-hint"></span>
+      </div>
+      <div class="rsi-cols">
+        <div>
+          <h3 class="ov-h">The labeler grows like a bonsai</h3>
+          <ol class="rsi-tree" id="rsi-tree"></ol>
+        </div>
+        <div>
+          <h3 class="ov-h">Rules it kept</h3>
+          <ol class="rsi-rules" id="rsi-rules"></ol>
+          <h3 class="ov-h">Lines it now names right</h3>
+          <ul class="rsi-fixed" id="rsi-fixed"></ul>
+        </div>
+      </div>
+      <h3 class="ov-h">Every completed run, relabeled</h3>
+      <ul class="rsi-runs" id="rsi-runs"></ul>
+      <p class="rsi-note" id="rsi-note"></p>
+    </section>
   </main>
 
   <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-label="Prompt overview">
@@ -97,7 +130,7 @@
     </div>
   </div>
 
-  <footer class="foot"><p>Runway Model Router · MuJoCo physics · SO-101 · SmolVLA · simulated</p></footer>
+  <footer class="foot"><p>Runway Model Router · MuJoCo physics · SO-101 · SmolVLA · RSI labeler (Bonsai loop, Raindrop traces) · simulated</p></footer>
   <div class="grain" aria-hidden="true"></div>
 </body>
 </html>

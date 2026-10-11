@@ -1,0 +1,992 @@
+{
+ "generated": "2026-10-11 13:50",
+ "terms": {
+  "success": "the cube ends in the bowl",
+  "duplicated_object": "the video adds or splits a red block",
+  "tracking_drift": "the block moves without the hand",
+  "grasp_miss": "the cube never leaves the table",
+  "missed_bowl": "lifted, but released outside the bowl",
+  "reach_limit": "the SO-101 cannot reach the pose",
+  "motion_too_fast": "joint speed, acceleration or jerk over the limit"
+ },
+ "corpus": {
+  "lines": 277,
+  "practice": 139,
+  "held_out": 138,
+  "gate_lines": 27,
+  "mujoco_lines": 250
+ },
+ "held_out": {
+  "seed": 0.7608695652173914,
+  "final": 0.9637681159420289
+ },
+ "versions": [
+  {
+   "id": "g0",
+   "parent": null,
+   "generation": 0,
+   "change": "seed labeler",
+   "shed": null,
+   "signal": null,
+   "kept": true,
+   "score": 0.7608695652173914,
+   "rules": 3,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.2467682
+  },
+  {
+   "id": "g1a",
+   "parent": "g0",
+   "generation": 1,
+   "change": "add 'open' -> success first",
+   "shed": "nothing (under budget)",
+   "signal": "15 success lines labeled grasp_miss",
+   "kept": true,
+   "score": 0.8985507246376812,
+   "rules": 4,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.249938
+  },
+  {
+   "id": "g2a",
+   "parent": "g1a",
+   "generation": 2,
+   "change": "add 'but rests' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "8 missed_bowl lines labeled success",
+   "kept": true,
+   "score": 0.9202898550724637,
+   "rules": 5,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.252171
+  },
+  {
+   "id": "g3a",
+   "parent": "g2a",
+   "generation": 3,
+   "change": "add 'with' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9202898550724637,
+   "rules": 6,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "with",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.254324
+  },
+  {
+   "id": "g3b",
+   "parent": "g2a",
+   "generation": 3,
+   "change": "add 'opens' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9202898550724637,
+   "rules": 6,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "opens",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.256615
+  },
+  {
+   "id": "g4a",
+   "parent": "g2a",
+   "generation": 4,
+   "change": "add 'short' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "2 missed_bowl lines labeled grasp_miss",
+   "kept": true,
+   "score": 0.9637681159420289,
+   "rules": 6,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.2589471
+  },
+  {
+   "id": "g5a",
+   "parent": "g4a",
+   "generation": 5,
+   "change": "add 'with' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9637681159420289,
+   "rules": 7,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "with",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.2611651
+  },
+  {
+   "id": "g5b",
+   "parent": "g4a",
+   "generation": 5,
+   "change": "add 'with the' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9637681159420289,
+   "rules": 7,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "with the",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.2634292
+  },
+  {
+   "id": "g6a",
+   "parent": "g4a",
+   "generation": 6,
+   "change": "add 'opens' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9637681159420289,
+   "rules": 7,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "opens",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.265758
+  },
+  {
+   "id": "g6b",
+   "parent": "g4a",
+   "generation": 6,
+   "change": "add 'the gripper' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9637681159420289,
+   "rules": 7,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "the gripper",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.2680268
+  },
+  {
+   "id": "g7a",
+   "parent": "g4a",
+   "generation": 7,
+   "change": "add 'opens with' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9637681159420289,
+   "rules": 7,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "opens with",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.27022
+  },
+  {
+   "id": "g7b",
+   "parent": "g4a",
+   "generation": 7,
+   "change": "add 'cm from the' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9637681159420289,
+   "rules": 7,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "cm from the",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.2725508
+  },
+  {
+   "id": "g8a",
+   "parent": "g4a",
+   "generation": 8,
+   "change": "add 'the cube cm' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9637681159420289,
+   "rules": 7,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "the cube cm",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.274946
+  },
+  {
+   "id": "g8b",
+   "parent": "g4a",
+   "generation": 8,
+   "change": "add 'with the cube' -> missed_bowl first",
+   "shed": "nothing (under budget)",
+   "signal": "4 missed_bowl lines labeled success",
+   "kept": false,
+   "score": 0.9637681159420289,
+   "rules": 7,
+   "harness": {
+    "rules": [
+     {
+      "phrase": "with the cube",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "short",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "but rests",
+      "term": "missed_bowl"
+     },
+     {
+      "phrase": "open",
+      "term": "success"
+     },
+     {
+      "phrase": "duplicat",
+      "term": "duplicated_object"
+     },
+     {
+      "phrase": "joint",
+      "term": "motion_too_fast"
+     },
+     {
+      "phrase": "bowl",
+      "term": "success"
+     }
+    ],
+    "default": "grasp_miss",
+    "max_rules": 8
+   },
+   "trace_id": null,
+   "ts": 1791751840.277029
+  }
+ ],
+ "best": "g4a",
+ "final": {
+  "rules": [
+   {
+    "phrase": "short",
+    "term": "missed_bowl"
+   },
+   {
+    "phrase": "but rests",
+    "term": "missed_bowl"
+   },
+   {
+    "phrase": "open",
+    "term": "success"
+   },
+   {
+    "phrase": "duplicat",
+    "term": "duplicated_object"
+   },
+   {
+    "phrase": "joint",
+    "term": "motion_too_fast"
+   },
+   {
+    "phrase": "bowl",
+    "term": "success"
+   }
+  ],
+  "default": "grasp_miss",
+  "max_rules": 8
+ },
+ "runs": [
+  {
+   "run": "runway clips: put the red block in the bowl",
+   "source": "gate",
+   "lines": 27,
+   "seed_acc": 0.5925925925925926,
+   "final_acc": 0.5925925925925926,
+   "terms": {
+    "success": 9,
+    "motion_too_fast": 8,
+    "grasp_miss": 6,
+    "duplicated_object": 4
+   },
+   "trend": "8 of 27 lines are motion_too_fast",
+   "actions": [
+    {
+     "term": "motion_too_fast",
+     "count": 8,
+     "do": "time-stretch the retarget to bring joint speed under the limit",
+     "example": "v00 IK hits a joint limit on 222 control ticks (max error 57 mm): the SO-101 cannot reach that pose"
+    },
+    {
+     "term": "grasp_miss",
+     "count": 6,
+     "do": "add re-anchored episodes at the cube starts where the grasp missed",
+     "example": "v00 a second red object 99% the size of the block; which one is the target?"
+    },
+    {
+     "term": "duplicated_object",
+     "count": 4,
+     "do": "add 'exactly one red block; it never splits or duplicates' to the Runway prompt (PhyT2V)",
+     "example": "v00 a second red block appears on 64 frames (first at 2.3 s): the video duplicated the object"
+    }
+   ]
+  },
+  {
+   "run": "smolvla-base (zero-shot)",
+   "source": "mujoco",
+   "lines": 50,
+   "seed_acc": 1.0,
+   "final_acc": 1.0,
+   "terms": {
+    "grasp_miss": 50
+   },
+   "trend": "50 of 50 lines are grasp_miss",
+   "actions": [
+    {
+     "term": "grasp_miss",
+     "count": 50,
+     "do": "add re-anchored episodes at the cube starts where the grasp missed",
+     "example": "seed 10000: cube never left the table, 750 frames"
+    }
+   ]
+  },
+  {
+   "run": "smolvla-base (out of the box)",
+   "source": "mujoco",
+   "lines": 50,
+   "seed_acc": 1.0,
+   "final_acc": 1.0,
+   "terms": {
+    "grasp_miss": 50
+   },
+   "trend": "50 of 50 lines are grasp_miss",
+   "actions": [
+    {
+     "term": "grasp_miss",
+     "count": 50,
+     "do": "add re-anchored episodes at the cube starts where the grasp missed",
+     "example": "seed 10000: no lift detected, time limit hit at frame 750"
+    }
+   ]
+  },
+  {
+   "run": "understudy-650 (recorded run)",
+   "source": "mujoco",
+   "lines": 50,
+   "seed_acc": 0.62,
+   "final_acc": 0.96,
+   "terms": {
+    "success": 19,
+    "grasp_miss": 18,
+    "missed_bowl": 13
+   },
+   "trend": "18 of 50 lines are grasp_miss",
+   "actions": [
+    {
+     "term": "grasp_miss",
+     "count": 18,
+     "do": "add re-anchored episodes at the cube starts where the grasp missed",
+     "example": "seed 10006: no lift detected, time limit hit at frame 750"
+    },
+    {
+     "term": "missed_bowl",
+     "count": 13,
+     "do": "add episodes with a longer carry and a slower release over the bowl",
+     "example": "seed 10000: cube carried, dropped 7.3 cm short, time limit hit at frame 750"
+    }
+   ]
+  },
+  {
+   "run": "expert-3000",
+   "source": "mujoco",
+   "lines": 50,
+   "seed_acc": 0.72,
+   "final_acc": 1.0,
+   "terms": {
+    "success": 44,
+    "grasp_miss": 5,
+    "missed_bowl": 1
+   },
+   "trend": "5 of 50 lines are grasp_miss",
+   "actions": [
+    {
+     "term": "grasp_miss",
+     "count": 5,
+     "do": "add re-anchored episodes at the cube starts where the grasp missed",
+     "example": "seed 10020: cube never left the table, 750 frames"
+    },
+    {
+     "term": "missed_bowl",
+     "count": 1,
+     "do": "add episodes with a longer carry and a slower release over the bowl",
+     "example": "seed 10023: cube lifted but rests 7.8 cm from bowl centre"
+    }
+   ]
+  },
+  {
+   "run": "expert-20000",
+   "source": "mujoco",
+   "lines": 50,
+   "seed_acc": 0.64,
+   "final_acc": 1.0,
+   "terms": {
+    "success": 44,
+    "grasp_miss": 5,
+    "missed_bowl": 1
+   },
+   "trend": "5 of 50 lines are grasp_miss",
+   "actions": [
+    {
+     "term": "grasp_miss",
+     "count": 5,
+     "do": "add re-anchored episodes at the cube starts where the grasp missed",
+     "example": "seed 10020: gripper closed on air; cube stayed at z 0.015 m after 750 frames"
+    },
+    {
+     "term": "missed_bowl",
+     "count": 1,
+     "do": "add episodes with a longer carry and a slower release over the bowl",
+     "example": "seed 10039: cube lifted but rests 8.7 cm from bowl centre"
+    }
+   ]
+  }
+ ],
+ "fixed": [
+  {
+   "text": "seed 10000: cube carried, dropped 7.3 cm short, time limit hit at frame 750",
+   "gold": "missed_bowl",
+   "seed": "grasp_miss",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10007: placed in 8.8 s, cube 2.8 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10008: cube lifted but rests 7.1 cm from bowl centre",
+   "gold": "missed_bowl",
+   "seed": "success",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10014: cube carried, dropped 8.0 cm short, time limit hit at frame 750",
+   "gold": "missed_bowl",
+   "seed": "grasp_miss",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10015: cube carried, dropped 9.2 cm short, time limit hit at frame 750",
+   "gold": "missed_bowl",
+   "seed": "grasp_miss",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10017: cube lifted but rests 7.5 cm from bowl centre",
+   "gold": "missed_bowl",
+   "seed": "success",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10021: placed in 7.3 s, cube 2.7 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10023: placed in 9.5 s, cube 1.8 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10028: cube lifted but rests 7.6 cm from bowl centre",
+   "gold": "missed_bowl",
+   "seed": "success",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10030: cube lifted but rests 7.3 cm from bowl centre",
+   "gold": "missed_bowl",
+   "seed": "success",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10034: cube carried, dropped 7.5 cm short, time limit hit at frame 750",
+   "gold": "missed_bowl",
+   "seed": "grasp_miss",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10037: cube lifted but rests 7.7 cm from bowl centre",
+   "gold": "missed_bowl",
+   "seed": "success",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10040: cube carried, dropped 7.3 cm short, time limit hit at frame 750",
+   "gold": "missed_bowl",
+   "seed": "grasp_miss",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10041: placed in 8.6 s, cube 3.0 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10043: cube carried, dropped 8.0 cm short, time limit hit at frame 750",
+   "gold": "missed_bowl",
+   "seed": "grasp_miss",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10046: cube carried, dropped 8.9 cm short, time limit hit at frame 750",
+   "gold": "missed_bowl",
+   "seed": "grasp_miss",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10047: cube carried, dropped 7.3 cm short, time limit hit at frame 750",
+   "gold": "missed_bowl",
+   "seed": "grasp_miss",
+   "final": "missed_bowl",
+   "run": "understudy-650 (recorded run)"
+  },
+  {
+   "text": "seed 10003: placed in 7.0 s, cube 0.4 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "expert-3000"
+  },
+  {
+   "text": "seed 10004: placed in 7.5 s, cube 0.8 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "expert-3000"
+  },
+  {
+   "text": "seed 10006: placed in 7.6 s, cube 2.3 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "expert-3000"
+  },
+  {
+   "text": "seed 10007: placed in 7.4 s, cube 1.6 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "expert-3000"
+  },
+  {
+   "text": "seed 10008: placed in 7.4 s, cube 0.7 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "expert-3000"
+  },
+  {
+   "text": "seed 10017: placed in 7.6 s, cube 0.8 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "expert-3000"
+  },
+  {
+   "text": "seed 10018: placed in 7.3 s, cube 0.6 cm off centre, gripper open",
+   "gold": "success",
+   "seed": "grasp_miss",
+   "final": "success",
+   "run": "expert-3000"
+  }
+ ],
+ "note": "Simulated: the labeler and its loop run for real on the text of completed runs; the data actions are proposals, nothing was retrained."
+}

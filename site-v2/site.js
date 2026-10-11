@@ -246,6 +246,8 @@
         secs != null ? "sentence to physics-accepted dataset, then SmolVLA training" : ""),
       row("Result", ev ? `<b class="ov-score">${num(ev.successes)}/${num(ev.seeds)}</b>` : `<span class="ov-pending">Evaluating</span>`,
         ev ? esc((o.result && o.result.note) || "in simulation") : "score in simulation"),
+      window.RSI ? row("RSI labeler", `MuJoCo text labeled right <b>${Math.round(RSI.held_out.seed * 100)}%</b> → <b>${Math.round(RSI.held_out.final * 100)}%</b> held-out`,
+        `${RSI.versions.filter((v) => v.kept).length - 1} changes kept, ${RSI.versions.filter((v) => !v.kept).length} pruned · simulated`) : "",
     ].join("");
     if (url) { dl.href = url; dl.removeAttribute("aria-disabled"); dl.innerHTML = `Download VLA${o.download && o.download.size && !(film && film.download) ? ` <small>${esc(o.download.size)}</small>` : ""}`; }
     else { dl.removeAttribute("href"); dl.setAttribute("aria-disabled", "true"); dl.innerHTML = "Download VLA <small>uploading</small>"; }

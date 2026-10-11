@@ -8,12 +8,12 @@ slug="put-the-red-block-in-the-bowl"
 run="$repo/data/web-runs/$slug"
 
 mkdir -p "$out/runs/$slug/media/vla" "$out/data" "$out/media"
-cp "$here/index.html" "$here/site.css" "$here/site.js" "$here/preview.js" "$here/route.js" "$out/"
+cp "$here/index.html" "$here/site.css" "$here/site.js" "$here/preview.js" "$here/route.js" "$here/rsi.js" "$out/"
 # the SO-101 model for the in-browser MuJoCo preview (decimated meshes, ~1.2 MB)
 [ -f "$out/sim/so101/so101_new_calib.xml" ] || "$repo/.venv/bin/python" "$repo/scripts/web_meshes.py" "$out/sim/so101"
 rm -rf "$out/api" && cp -R "$here/api" "$out/api"   # live Runway generation (Vercel functions; key in the RUNWAY_API_KEY env var)
 cp "$here/media/hero-cine.jpg" "$out/media/"
-cp "$here/data/recorded.json" "$here/data/overview.json" "$out/data/"
+cp "$here/data/recorded.json" "$here/data/overview.json" "$here/data/rsi.json" "$out/data/"
 cp "$repo/data/router-dryruns.json" "$out/data/router-dryruns.json"
 for c in v01 v03 v06 v07; do cp "$run/media/vla/$c.mp4" "$run/media/vla/$c.json" "$out/runs/$slug/media/vla/"; done
 [ -f "$run/router_bench.json" ] && cp "$run/router_bench.json" "$out/runs/$slug/router_bench.json"
